@@ -1,0 +1,1 @@
+export type MeetingType = 'testimony' | 'regular' | 'stake' | 'general';
