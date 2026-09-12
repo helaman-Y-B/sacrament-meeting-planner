@@ -10,7 +10,7 @@ export default function MeetingCard({
   return (
     <Link
       href={`/meetings/${meeting.id}`}
-      className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
+      className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow m-4 border-2 border-gray-200"
     >
       <h2 className="text-xl font-bold text-gray-800">
         Meeting: {meeting.meetingType}
