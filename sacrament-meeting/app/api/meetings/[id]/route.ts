@@ -6,7 +6,7 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const meeting = getMeetingById(Number(id));
+    const meeting = await getMeetingById(Number(id));
 
     if (!meeting) {
       return new Response(JSON.stringify({ error: "Meeting not found" }), {
