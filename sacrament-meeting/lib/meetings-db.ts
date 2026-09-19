@@ -93,16 +93,16 @@ export async function filterMeetingsByType(
 }
 
 // Testing the retrieval functions
-console.log("All Meetings:", getAllMeetings());
+//console.log("All Meetings:", getAllMeetings());
 
-console.log("Meeting on 2026-09-20:", getMeetingByDate("2026-09-20"));
+//console.log("Meeting on 2026-09-20:", getMeetingByDate("2026-09-20"));
 
-console.log("Meeting with ID 3:", getMeetingById(3));
+//console.log("Meeting with ID 3:", getMeetingById(3));
 
-console.log("Regular Meetings:", filterMeetingsByType("regular"));
+//console.log("Regular Meetings:", filterMeetingsByType("regular"));
 
-console.log("Testimony Meetings:", filterMeetingsByType("testimony"));
+//console.log("Testimony Meetings:", filterMeetingsByType("testimony"));
 
-console.log("Stake Meetings:", filterMeetingsByType("stake"));
+//console.log("Stake Meetings:", filterMeetingsByType("stake"));
 
-console.log("General Meetings:", filterMeetingsByType("general"));
+//console.log("General Meetings:", filterMeetingsByType("general"));
