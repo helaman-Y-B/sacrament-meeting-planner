@@ -1,6 +1,11 @@
 import AllMeetings from "@/components/AllMeetings";
+import { MeetingSearch } from "@/components/MeetingSearch";
 
-export default function Meetings() {
+export default async function Meetings(props: {
+  searchParams?: Promise<{ query?: string; page?: string }>;
+}) {
+  const searchParams = await props.searchParams;
+  const query = searchParams?.query ?? "";
 
   return (
     <>
@@ -9,8 +14,9 @@ export default function Meetings() {
         <p className="text-lg text-center text-gray-600">
           View all upcoming sacrament meetings and their details.
         </p>
+        <MeetingSearch />
       </section>
-      <AllMeetings />
+      <AllMeetings query={query} />
     </>
   );
 }
