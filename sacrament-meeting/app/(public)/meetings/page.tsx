@@ -6,6 +6,7 @@ export default async function Meetings(props: {
 }) {
   const searchParams = await props.searchParams;
   const query = searchParams?.query ?? "";
+  const page = Number(searchParams?.page) || 1;
 
   return (
     <>
@@ -16,7 +17,7 @@ export default async function Meetings(props: {
         </p>
         <MeetingSearch />
       </section>
-      <AllMeetings query={query} />
+      <AllMeetings query={query} page={page} />
     </>
   );
 }
