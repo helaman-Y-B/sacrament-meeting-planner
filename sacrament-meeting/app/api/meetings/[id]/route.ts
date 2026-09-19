@@ -6,7 +6,18 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const meeting = await getMeetingById(Number(id));
+    const meetingId = Number(id);
+
+    if (!Number.isInteger(meetingId) || meetingId < 1) {
+      return new Response(JSON.stringify({ error: "Invalid meeting ID" }), {
+        status: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    }
+
+    const meeting = await getMeetingById(meetingId);
 
     if (!meeting) {
       return new Response(JSON.stringify({ error: "Meeting not found" }), {
@@ -27,15 +38,6 @@ export async function GET(
     if (error instanceof Error && error.message === "Meetings not found") {
       return new Response(JSON.stringify({ error: "Meeting not found" }), {
         status: 404,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    }
-    // Error 400: Bad Request
-    if (error instanceof Error && error.message === "Invalid request") {
-      return new Response(JSON.stringify({ error: "Invalid request" }), {
-        status: 400,
         headers: {
           "Content-Type": "application/json",
         },
