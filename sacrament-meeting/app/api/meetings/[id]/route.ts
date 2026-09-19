@@ -1,6 +1,6 @@
 import { getMeetingById } from "@/lib/meetings-db";
 
-export async function GET(
+export default async function GET(
     _request: Request,
     { params }: { params: Promise<{ id: string }> }
 ) {
