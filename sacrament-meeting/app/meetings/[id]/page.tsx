@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import MeetingDetail from "@/components/MeetingDetail";
-import GET from "@/app/api/meetings/[id]/route";
+import { GET } from "@/app/api/meetings/[id]/route";
 
 export default async function MeetingPage({
   params,
